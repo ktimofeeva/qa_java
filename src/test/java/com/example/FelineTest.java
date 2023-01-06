@@ -14,7 +14,7 @@ public class FelineTest {
         this.number = number;
     }
 
-    @Parameterized.Parameters // добавили аннотацию
+    @Parameterized.Parameters(name = "Тестовые данные: {0} {1} {2}") // добавили аннотацию
     public static Object[][] getSumData() {
         return new Object[][]{
                 {1},
@@ -48,7 +48,7 @@ public class FelineTest {
     @Test
     public void checkingTheMethodEatMeat() throws Exception {
         Feline feline = new Feline();
-        List<String> actualResult = List.of("Животные", "Птицы", "Рыба");
-        assertEquals("Списки должны совпадать", actualResult, feline.eatMeat());
+        List<String> expectedResult = List.of("Животные", "Птицы", "Рыба");
+        assertEquals("Списки должны совпадать", expectedResult, feline.eatMeat());
     }
 }
