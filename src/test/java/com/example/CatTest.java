@@ -26,8 +26,8 @@ public class CatTest {
     @Test
     public void checkingTheMethodGetFood() throws Exception {
         Cat cat = new Cat(feline);
-        List<String> actualResult = List.of("Животные", "Птицы", "Рыба");
+        List<String> expectedResult = List.of("Животные", "Птицы", "Рыба");
         Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
-        assertEquals("Списки должны совпадать", actualResult, cat.getFood());
+        assertEquals("Списки должны совпадать", expectedResult, cat.getFood());
     }
 }
