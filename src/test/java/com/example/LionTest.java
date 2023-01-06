@@ -29,7 +29,7 @@ public class LionTest {
         String sex = "Самец";
         Lion lion = new Lion(sex,feline);
         boolean actualResult = lion.doesHaveMane();
-        assertEquals("Должен быть true", actualResult, true);
+        assertEquals("Должен быть true", true, actualResult);
     }
 
 
@@ -38,16 +38,16 @@ public class LionTest {
         String sex = "Самка";
         Lion lion = new Lion(sex,feline);
         boolean actualResult = lion.doesHaveMane();
-        assertEquals("Должен быть false", actualResult, false);
+        assertEquals("Должен быть false", false, actualResult);
     }
 
     @Test
     public void checkingTheMethodGetFood() throws Exception {
         String sex = "Самка";
         Lion lion = new Lion(sex, feline);
-        List<String> actualResult = List.of("Животные", "Птицы", "Рыба");
+        List<String> expectedResult = List.of("Животные", "Птицы", "Рыба");
         Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
-        assertEquals("Списки должны совпадать", actualResult, lion.getFood());
+        assertEquals("Списки должны совпадать", expectedResult, lion.getFood());
     }
 
 }
